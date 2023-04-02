@@ -38,7 +38,7 @@ require([
         symbolLayers: [
           {
             type: "line",
-            material: { color: [255, 255, 255, 0.3] },
+            material: { color: [255, 255, 255, 0.8] },
             size: 2
           }
         ]
