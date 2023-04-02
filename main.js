@@ -17,8 +17,8 @@ require([
           {
             type: "fill",
             outline: {
-              color: [255, 255, 255, 0.8],
-              size: 1
+              color: [255, 255, 255, 0.3],
+              size: 0
             }
           }
         ]
@@ -38,8 +38,8 @@ require([
         symbolLayers: [
           {
             type: "line",
-            material: { color: [255, 133, 125, 0.7] },
-            size: 3
+            material: { color: [255, 255, 255, 0.3] },
+            size: 2
           }
         ]
       }
