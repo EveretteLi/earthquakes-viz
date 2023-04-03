@@ -128,7 +128,10 @@ require([
           {
             type: "object",
             resource: {
-              primitive: "sphere"
+              href: {
+                type: "expression",
+                expression: "$feature.image"
+              }
             },
             material: { color: [255, 250, 239, 0.8] },
             depth: 10000,
@@ -161,8 +164,8 @@ require([
       ]
     },
     popupTemplate: {
-      content: "Magnitude {mag} {type} hit {place} on {time} at a depth of {depth} km.",
-      title: "Earthquake info",
+      content: "Image detail",
+      title: "Image info",
       fieldInfos: [
         {
           fieldName: "time",
