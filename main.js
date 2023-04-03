@@ -125,25 +125,21 @@ require([
       symbol: {
         type: "point-3d",
         symbolLayers: [
-          {
-            type: "object",
-            resource: {
-              href: {
-                type: "expression",
-                expression: "$feature.image"
-              }
-            },
-            size: 20,
-            outline: {
-              color: "white",
-              size: 1
-            },
-            material: { color: [255, 250, 239, 0.8] },
-            // depth: 10000,
-            // height: 10000,
-            // width: 10000
+        {
+          type: "icon",
+          resource: {
+            href: {
+              type: "expression",
+              expression: "$feature.image"
+            }
+          },
+          size: 20, // Adjust the size of the image as needed
+          outline: {
+            color: "white",
+            size: 1
           }
-        ]
+        }
+      ]
       },
       visualVariables: [
         {
