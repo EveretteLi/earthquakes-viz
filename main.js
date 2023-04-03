@@ -18,7 +18,7 @@ require([
             type: "fill",
             outline: {
               color: [255, 255, 255, 0.3],
-              size: 0
+              size: 1
             }
           }
         ]
@@ -126,7 +126,7 @@ require([
         type: "point-3d",
         symbolLayers: [
           {
-            type: "icon",
+            type: "object",
             resource: {
               primitive: "sphere"
             },
