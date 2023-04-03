@@ -117,7 +117,7 @@ require([
 
   // define the earthquakes layer
   const earthquakeLayer = new CSVLayer({
-    url: "./eq_image_lite.csv",
+    url: "./eq_image.csv",
     elevationInfo: exaggeratedElevation,
     screenSizePerspectiveEnabled: false,
     renderer: {
@@ -128,15 +128,7 @@ require([
           {
             type: "object",
             resource: {
-              href: {
-                type: "expression",
-                expression: "$feature.image"
-              }
-            },
-            size: 20, // Adjust the size of the image as needed
-            outline: {
-              color: "white",
-              size: 1
+              primitive: "sphere"
             },
             material: { color: [255, 250, 239, 0.8] },
             depth: 10000,
@@ -169,30 +161,19 @@ require([
       ]
     },
     popupTemplate: {
-      content: "Image detail",
       title: "Image info",
-      fieldInfos: [
-        {
-          fieldName: "time",
-          format: {
-            dateFormat: "short-date-long-time-24"
-          }
-        },
-        {
-          fieldName: "mag",
-          format: {
-            places: 1,
-            digitSeparator: true
-          }
-        },
-        {
-          fieldName: "depth",
-          format: {
-            places: 1,
-            digitSeparator: true
-          }
-        }
-      ]
+      
+      content: function(feature) {
+        const attributes = feature.graphic.attributes;
+        const imageUrl = attributes.image;
+        const timestamp = attributes.time;
+        return `
+          <div>
+            <img src="${imageUrl}" alt="Image" style="max-width: 100%; max-height: 200px;" />
+            <p>timestamp: ${timestamp}</p>
+          </div>
+        `;
+      }
     }
   });
 
@@ -203,6 +184,7 @@ require([
 
   view.whenLayerView(earthquakeLayer).then(function(lyrView) {
     earthquakeLayerView = lyrView;
+    console.log("earthquakeLayerView: ", earthquakeLayerView)
   });
 
   function formatDate(date) {
