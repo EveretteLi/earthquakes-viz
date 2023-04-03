@@ -133,10 +133,15 @@ require([
                 expression: "$feature.image"
               }
             },
+            size: 20,
+            outline: {
+              color: "white",
+              size: 1
+            },
             material: { color: [255, 250, 239, 0.8] },
-            depth: 10000,
-            height: 10000,
-            width: 10000
+            // depth: 10000,
+            // height: 10000,
+            // width: 10000
           }
         ]
       },
