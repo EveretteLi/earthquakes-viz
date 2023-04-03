@@ -128,10 +128,7 @@ require([
         {
           type: "icon",
           resource: {
-            href: {
-              type: "expression",
-              expression: "$feature.image"
-            }
+            primitive: "sphere"
           },
           size: 20, // Adjust the size of the image as needed
           outline: {
