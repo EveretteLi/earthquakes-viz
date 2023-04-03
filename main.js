@@ -117,7 +117,7 @@ require([
 
   // define the earthquakes layer
   const earthquakeLayer = new CSVLayer({
-    url: "./eq_replace.csv",
+    url: "./eq_image.csv",
     elevationInfo: exaggeratedElevation,
     screenSizePerspectiveEnabled: false,
     renderer: {
