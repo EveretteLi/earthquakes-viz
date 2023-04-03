@@ -126,7 +126,7 @@ require([
         type: "point-3d",
         symbolLayers: [
           {
-            type: "icon",
+            type: "object",
             resource: {
               href: {
                 type: "expression",
@@ -137,7 +137,11 @@ require([
             outline: {
               color: "white",
               size: 1
-            }
+            },
+            material: { color: [255, 250, 239, 0.8] },
+            depth: 10000,
+            height: 10000,
+            width: 10000
           }
         ]
       },
